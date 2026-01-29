@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERFOCUS | 2077</title>
+    <!-- Google Fonts: Orbitron -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Atmosfer -->
+    <div class="background-grid"></div>
+    <div class="vignette"></div>
+
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <h1 class="glitch-text" data-text="CYBERFOCUS">CYBERFOCUS</h1>
+                <button id="theme-toggle" class="icon-btn" title="TOGGLE THEME">☀</button>
+            </div>
+
+            <div class="level-container">
+                <div class="level-info">
+                    <span id="rank-name">NOVICE</span>
+                    <span>LVL <span id="level-num">1</span></span>
+                </div>
+                <div class="xp-bar-bg">
+                    <div id="xp-bar-fill" class="xp-bar-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Timer Module -->
+            <section class="timer-module glass-panel">
+                <div class="timer-display">
+                    <span id="minutes">25</span><span class="colon">:</span><span id="seconds">00</span><span
+                        id="centiseconds" style="display:none; font-size: 0.5em; color: var(--neon-cyan)">.00</span>
+                </div>
+                <div id="timer-status" class="timer-status">SYSTEM READY</div>
+
+                <!-- Mod Seçici -->
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="pomodoro">POMODORO</button>
+                    <button class="mode-btn" data-mode="short">SHORT</button>
+                    <button class="mode-btn" data-mode="long">LONG</button>
+                    <button class="mode-btn" data-mode="custom">CUSTOM</button>
+                    <button class="mode-btn" data-mode="stopwatch">CHRONO</button>
+                </div>
+
+                <!-- Custom Input Alanı (Gizli) -->
+                <div id="custom-input-container" class="custom-input-container hidden">
+                    <input type="number" id="custom-min" placeholder="MM" min="0" max="999">
+                    <input type="number" id="custom-sec" placeholder="SS" min="0" max="59">
+                    <button id="set-custom-btn" class="cyber-btn small">SET</button>
+                </div>
+
+                <!-- Ana Kontroller -->
+                <div class="main-controls">
+                    <button id="start-btn" class="cyber-btn glitch-btn">START</button>
+                    <button id="reset-btn" class="cyber-btn secondary">RESET</button>
+                </div>
+            </section>
+
+            <!-- Task Module -->
+            <section class="task-module glass-panel">
+                <div class="task-header">
+                    <h2>MISSION_LOG</h2>
+                    <span id="active-task-indicator" class="blink-text">NO ACTIVE MISSION</span>
+                </div>
+
+                <div class="task-input-group">
+                    <input type="text" id="task-input" placeholder="ENTER NEW OBJECTIVE...">
+                    <button id="add-task-btn" class="cyber-btn small">+</button>
+                </div>
+
+                <ul id="task-list" class="task-list">
+                    <!-- Javascript ile doldurulacak -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-controls">
+                <p>SYSTEM: <span class="online-status">ONLINE</span></p>
+                <p>AUDIO: <span id="audio-status">OFF</span></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Ses Efekti için Audio Context uyarısı (ilk etkileşimde açılır) -->
+    <script src="script.js"></script>
+</body>
+
+</html>
